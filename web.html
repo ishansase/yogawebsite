@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yoga & Pranayama Classes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f3f9f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #6dbf7b;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 5px solid #58a467;
+    }
+
+    header img {
+      height: 60px;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 2em;
+    }
+
+    section {
+      padding: 20px;
+      margin: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #2c7a4b;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #2c7a4b;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #24653c;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #confirmationMsg {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f0f0f0;
+      margin-top: 30px;
+      color: #666;
+    }
+
+    .contact-details p {
+      margin: 6px 0;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 300px;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="E:\yoga\ChatGPT Image Jun 23, 2025, 01_59_15 PM.png" alt="Yoga Logo" />
+    <h1>योग व प्राणायाम वर्ग</h1>
+    <p>Welcome to our serene and healing yoga journey</p>
+  </header>
+
+  <section class="location">
+    <h2>📍 Class Location</h2>
+    <p><strong>Offline Location:</strong> Raghunathrao Nimbalkar Memorial Hospital, Shivaji Peth, Kolhapur, Maharashtra 416012</p>
+    <p><strong>Online Classes:</strong> Google Meet (link shared after registration)</p>
+    <!-- Google Maps Embed -->
+    <iframe src="https://www.google.com/maps?q=Raghunathrao+Nimbalkar+Memorial+Hospital,+Kolhapur&output=embed" allowfullscreen></iframe>
+  </section>
+
+  <section class="contact-details">
+    <h2>📞 Contact Us</h2>
+    <p><strong>Organizer Name:</strong> Manisha Sudhir Sase</p>
+    <p><strong>Phone:</strong> +91 7722004624</p>
+    <p><strong>Email:</strong> manishasase1977@gmail.com</p>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917722004624" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
+  </section>
+
+  <section class="feedback">
+    <h2>📝 Feedback Form</h2>
+    <form id="feedbackForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Your Experience:</label>
+      <textarea id="message" rows="5" required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+    <p id="confirmationMsg"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 योग व प्राणायाम वर्ग | Organized by Manisha Sudhir Sase</p>
+    <p>Contact: +91 7722004624 | Email: manishasase1977@gmail.com</p>
+  </footer>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const msg = document.getElementById("confirmationMsg");
+
+      if (name && email && message) {
+        msg.textContent = "Thank you for your feedback!";
+        msg.style.color = "green";
+        this.reset();
+        setTimeout(() => msg.textContent = "", 4000);
+      } else {
+        msg.textContent = "Please fill out all fields.";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
